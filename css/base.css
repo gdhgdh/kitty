@@ -1,0 +1,23 @@
+html{font-size: 10px;}
+body{background-color: #ebebeb;font-size: 1.6em;}
+/*colors*/
+.green_bg{background-color: #15b474;}
+.orange_bg{background-color: #f13fff;}
+
+.green{color: #15b474;}
+.orange{color: #f13fff;}
+/*font*/
+.font14{font-size: 1.4rem;}
+/* border */
+.bbgrey{border-bottom: solid 1px lightgrey;}
+/*buttons*/
+.btn_solid{color: white;}
+.btn_hollow{border:solid 1px rgba(0,0,0,1);}
+/*tags*/
+.tag{padding: 0.5em 1em;border-radius:8px;}
+
+
+
+
+.flexbox{display: box;display: -webkit-box;}
+.borderbox{-webkit-box-sizing: border-box; box-sizing: border-box;}
