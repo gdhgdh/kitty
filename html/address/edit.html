@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+	<title>添加地址</title>
+    <link rel="stylesheet" type="text/css" href="../../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../css/icon.css">
+
+</head>
+<body ms-controller="new-addr">
+	<div class="top-nav"><a class="icon-back iconfont">&#xe602;返回</a>收货地址</div>
+    <div class="mt3em"></div>
+	<div class="outer lh3em bbgrey order-new-addr">
+	    <div class="bbgrey font09"><label for="">收货人姓名：</label><input>
+            <div class="checktip" id="checktip_name"></div>
+        </div>
+	    <div class="bbgrey font09"><label for="">手机号码：</label><input  type="number">
+            <div class="checktip" id="checktip_tphone"></div>
+
+        </div>
+	    <div class="bbgrey font09 icon-rightEX" id="to_choose_loc" ms-on-click="toChsLocation"><label for="">省/市/区：</label> 广东省 广州市 天河区
+            <span class="icon-right-arrow iconfont">&#xe603;</span>
+        </div>
+	    <div class=" font09"><label for="">详细地址：</label><input >
+            <div class="checktip" id="checktip_det"></div>
+        </div>
+	</div>
+
+    <div class="outer lh3em font09 bgrey_top_btm">
+	    <p class="">
+                <label for="checkbox" class="regular-checkbox-rightword">设为默认</label>
+                <input type="checkbox" id="checkbox" class="regular-checkbox icon-check-right" />
+	    </p>
+    </div>
+    <div class="fixed_btm fix_btm_mask">
+            <div id="chs_loc" class="mask">
+                <span class="mask_close" ms-on-click="closeMask">&times;</span>
+                <div class="mask_title bbgrey lrpd10 lightgrey lh3em">
+                    <span id='loc_title'>配送至：<!-- {{provinceName}}&nbsp;{{cityName}}&nbsp;{{districtName}} --></span>
+                </div>
+                <ul id="provinces">
+                 <!--    <li class="bbgrey">广东省</li> -->
+                     <li class="bbgrey" ms-repeat="provincesData" ms-on-click="getSub(el.id,el.name,'city')">{{el.name}}</li>
+
+                </ul>
+                <ul id="cities"> 
+                    <!-- <li class="bbgrey"></li> -->
+                     <li class="bbgrey" ms-repeat="citiesData" ms-on-click="getSub(el.id,el.name,'district')">{{el.name}}</li>
+
+                </ul>
+                <ul id="districts">
+                    <!-- <li class="bbgrey"></li> -->
+                     <li class="bbgrey" ms-repeat="districtsData" ms-on-click="getSub(el.id,el.name,'end')">{{el.name}}</li>
+
+                </ul>
+
+            </div>
+    </div>
+	<div class="btn_submit" ms-if="ins=='new'"  ms-on-click="submit">确定</div>
+
+    <div id="maskbg"></div>
+
+
+</body>
+</html>
